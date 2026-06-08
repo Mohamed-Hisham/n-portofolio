@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nouran Tarek Soliman - Applied Linguistics Researcher</title>
+    <meta name="description" content="Academic portfolio of Nouran Tarek Soliman, Ph.D. candidate in Applied Linguistics at AUC. Research in sociolinguistics, language ideologies, Arabic diglossia, and media translation studies.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nouran Tarek Soliman — Applied Linguistics Researcher">
+    <meta property="og:description" content="Ph.D. candidate in Applied Linguistics. Research in sociolinguistics, language ideologies, Arabic diglossia, and media translation studies.">
+    <meta property="og:image" content="./assets/images/profile_pic.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nouran Tarek Soliman — Applied Linguistics Researcher">
+    <meta name="twitter:description" content="Ph.D. candidate in Applied Linguistics. Research in sociolinguistics, language ideologies, Arabic diglossia, and media translation studies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:wght@200;300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -219,11 +227,13 @@
             transition: width 0.3s;
         }
 
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             color: var(--secondary);
         }
 
-        nav a:hover::after {
+        nav a:hover::after,
+        nav a.active::after {
             width: 100%;
         }
 
@@ -290,8 +300,6 @@
         .about-content p {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            text-align: justify;
-            text-justify: inter-word;
         }
 
         .expertise-areas {
@@ -419,8 +427,6 @@
         }
 
         .publication-card p {
-            text-align: justify;
-            text-justify: inter-word;
             color: var(--text-light);
             line-height: 1.8;
         }
@@ -491,15 +497,25 @@
         }
 
         .research-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary);
+            width: 52px;
+            height: 52px;
+            background: transparent;
+            border: 2px solid var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+        }
+
+        .research-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--secondary);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .research-card h4 {
@@ -581,6 +597,21 @@
             }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
         /* Scroll animations */
         .fade-in {
             opacity: 0;
@@ -602,7 +633,10 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <img src="./assets/images/profile_pic-cmpr.png" alt="Nouran Tarek Soliman" class="profile-img" id="profileImage">
+            <picture>
+                <source srcset="./assets/images/profile_pic.webp" type="image/webp">
+                <img src="./assets/images/profile_pic-cmpr.png" alt="Nouran Tarek Soliman" class="profile-img" id="profileImage" width="180" height="180" fetchpriority="high">
+            </picture>
             <div class="subtitle">English Linguistics Expert</div>
             <h1>Nouran Tarek Soliman</h1>
             <div class="academic-title">Applied Linguistics Ph.D. Candidate</div>
@@ -632,7 +666,7 @@
                     <p>I am a Ph.D. candidate in Applied Linguistics with over 4 years of experience in academia and 6 years of academic English language teaching. My research focuses on sociolinguistics with special attention to cultural sensitivity, language ideologies, and attitudes toward language variation.</p>
                     <p>As a detail-oriented sociolinguistic researcher, I am pursuing a career in research, editing, and curriculum development, bringing together my passion for language analysis and pedagogical innovation.</p>
                 </div>
-                <div class="contact-info fade-in">
+                <div class="contact-info fade-in" id="contact">
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--primary); margin-bottom: 25px;">Get in Touch</h3>
                     <div class="contact-item">
                         <span class="contact-label">Email:</span>
@@ -640,11 +674,11 @@
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">LinkedIn:</span>
-                        <a href="https://www.linkedin.com/in/nouransoliman" target="_blank">in/nouran-soliman</a>
+                        <a href="https://www.linkedin.com/in/nouransoliman" target="_blank" rel="noopener noreferrer">in/nouran-soliman</a>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Publications:</span>
-                        <a href="https://www.euppublishing.com/author/Soliman%2C+Nouran+Tarek" target="_blank">Edinburgh University Press</a>
+                        <a href="https://www.euppublishing.com/author/Soliman%2C+Nouran+Tarek" target="_blank" rel="noopener noreferrer">Edinburgh University Press</a>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Location:</span>
@@ -686,7 +720,9 @@
             </div>
             <div class="research-grid">
                 <div class="research-card fade-in">
-                    <div class="research-icon">🗣️</div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
                     <h4>Language Ideologies & Attitudes</h4>
                     <ul>
                         <li>Metalinguistic discourse analysis</li>
@@ -696,7 +732,9 @@
                     </ul>
                 </div>
                 <div class="research-card fade-in">
-                    <div class="research-icon">🌍</div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
                     <h4>Arabic Sociolinguistics</h4>
                     <ul>
                         <li>Diglossia and language variation</li>
@@ -706,7 +744,9 @@
                     </ul>
                 </div>
                 <div class="research-card fade-in">
-                    <div class="research-icon">🎬</div>
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                    </div>
                     <h4>Media & Translation Studies</h4>
                     <ul>
                         <li>Dubbing and localization</li>
@@ -732,12 +772,12 @@
                         <span class="pub-badge">Journal Article</span>
                         <span class="pub-badge">December 2024</span>
                     </div>
-                    <h3><a href="https://apc.aast.edu/ojs/index.php/ILCC/article/view/ILCC.2024.04.2.1058" target="_blank">Transitivity, verbal humour and the construction of identity in Trevor Noah’s narratives</a></h3>
+                    <h3><a href="https://apc.aast.edu/ojs/index.php/ILCC/article/view/ILCC.2024.04.2.1058" target="_blank" rel="noopener noreferrer">Transitivity, verbal humour and the construction of identity in Trevor Noah’s narratives</a></h3>
                     <p><strong>Authors:</strong> Nouran Tarek Soliman, Rabia Abdul-Salim Madhi</p>
                     <p><strong>Publisher:</strong> Insights into Language, Culture and Communication (ILCC), Academy Publishing Center (APC), Arab Academy for Science, Technology and Maritime Transport (AASTMT)</p>
-                    <p><strong>DOI:</strong> <a href="https://dx.doi.org/10.21622/ILCC.2024.04.2.1058" target="_blank">10.21622/ILCC.2024.04.2.1058</a></p>
-                    <p><strong>Abstract:</strong> The aim of this research paper is to analyze <em>Son of Patricia’s</em> stand-up comedy show and <em>Born a Crime</em> memoir by Trevor Noah to find out how the experience of racial discrimination, identity, social commentary, and personal anecdotes have been manifested in Noah’s language choice. This descriptive study uses an eclectic approach combining Systemic Functional Grammar (SFG), discourse analysis, and humor studies. The data from both genres was analyzed using the Hallidayan Transitivity model and the General Theory of Verbal Humor (GTVH). The research combines qualitative and quantitative data. The results highlight the distinct uses of transitivity processes in both excerpts, with the stand-up comedy employing more dynamic verbs, denoting action, while the memoir uses more relational processes. The GTVH analysis revealed that humor in the stand-up comedy often challenges racial stereotypes more directly than in the memoir. The discussion pinpointed that Noah’s strategic use of language not only constructs his racial identity but also critiques societal norms. The study concludes that the combination of transitivity and humor effectively unveils deeper layers of identity and societal commentary, suggesting a powerful interplay between language use and personal narrative in Noah’s work.</p>
-                    <a href="https://apc.aast.edu/ojs/index.php/ILCC/article/view/ILCC.2024.04.2.1058/pdf_53" target="_blank" class="pub-link">Read Full Article (PDF) →</a>
+                    <p><strong>DOI:</strong> <a href="https://dx.doi.org/10.21622/ILCC.2024.04.2.1058" target="_blank" rel="noopener noreferrer">10.21622/ILCC.2024.04.2.1058</a></p>
+                    <p>An eclectic discourse analysis of Trevor Noah’s <em>Son of Patricia</em> stand-up comedy and <em>Born a Crime</em> memoir, examining how racial identity, social commentary, and humor are constructed through language. Combines the Hallidayan Transitivity model with the General Theory of Verbal Humor (GTVH) across qualitative and quantitative data.</p>
+                    <a href="https://apc.aast.edu/ojs/index.php/ILCC/article/view/ILCC.2024.04.2.1058/pdf_53" target="_blank" rel="noopener noreferrer" class="pub-link">Read Full Article (PDF) →</a>
                 </article>
                 
                 <article class="publication-card fade-in">
@@ -745,10 +785,10 @@
                         <span class="pub-badge">Journal Article</span>
                         <span class="pub-badge">September 2024</span>
                     </div>
-                    <h3><a href="https://www.euppublishing.com/doi/10.3366/arabic.2024.0032" target="_blank">Investigating language ideologies and attitudes toward dubbing Disney movies into Arabic</a></h3>
+                    <h3><a href="https://www.euppublishing.com/doi/10.3366/arabic.2024.0032" target="_blank" rel="noopener noreferrer">Investigating language ideologies and attitudes toward dubbing Disney movies into Arabic</a></h3>
                     <p><strong>Publisher:</strong> Edinburgh University Press</p>
-                    <p>This study analyzes the online discussions surrounding the dubbing of Disney movies into two Arabic varieties: Modern Standard Arabic (MSA) and Egyptian Colloquial Arabic (ECA). The objective is to uncover the language ideologies and attitudes taken by Disney Facebook commenters and verbal-guise technique (VGT) participants online. The study employed stance-taking to analyze the metalinguistic comments made by Facebook users about the use of these two Arabic varieties in the context of Disney. The findings showed the differences in language attitudes between Maghreb, Mashreq, and Arab Peninsula countries. Moreover, ECA competes with MSA in prestige and pleasantness. MSA is seen as the thread that connects the Arab World and is admired for its connection with the Arab heritage, religion, and education. However, it is less favored for its rigidity, unintelligibility, and unnaturalness as a spoken variety. Finally, ECA is favored for its simplicity, humor, closeness, familiarity, intimacy, naturalness, and entertainment.</p>
-                    <a href="https://www.euppublishing.com/doi/10.3366/arabic.2024.0032" target="_blank" class="pub-link">Read Publication →</a>
+                    <p>Analyzes metalinguistic stance-taking in Facebook discussions about Disney dubbing into Modern Standard Arabic (MSA) and Egyptian Colloquial Arabic (ECA), combined with a verbal-guise technique (VGT) experiment. Reveals divergent language attitudes across Maghreb, Mashreq, and Arab Peninsula communities, with ECA emerging as a strong competitor to MSA in prestige and naturalness.</p>
+                    <a href="https://www.euppublishing.com/doi/10.3366/arabic.2024.0032" target="_blank" rel="noopener noreferrer" class="pub-link">Read Publication →</a>
                 </article>
 
                 <article class="publication-card fade-in">
@@ -756,23 +796,23 @@
                         <span class="pub-badge">Master's Thesis</span>
                         <span class="pub-badge">January 2024</span>
                     </div>
-                    <h3><a href="https://fount.aucegypt.edu/etds/2234/" target="_blank">Language Ideologies and Attitudes Towards Dubbing Disney Movies into Arabic</a></h3>
+                    <h3><a href="https://fount.aucegypt.edu/etds/2234/" target="_blank" rel="noopener noreferrer">Language Ideologies and Attitudes Towards Dubbing Disney Movies into Arabic</a></h3>
                     <p><strong>Publisher:</strong> AUC Knowledge Fountain</p>
-                    <p>This research delves into the analysis of online discussions surrounding the dubbing of Disney movies into two Arabic varieties: Modern Standard Arabic (MSA) and Egyptian Colloquial Arabic (ECA). The objective is to uncover the language ideologies and attitudes taken by Disney fans online. Dubbing Disney movies into these two varieties has sparked numerous debates on social media, particularly on Facebook. The findings provided valuable insights into how Arab social media users' stances are influenced by their ideologies and attitudes. The VGT experiment provided another perspective on how Arabs evaluate MSA and ECA in the context of Disney movies and how they express their indirect language attitudes. The findings showed the differences in language attitudes between Maghreb, Mashreq, and Arab Peninsula countries. Mashreq and Peninsula countries revealed closer language attitudes than those of the Maghreb countries.</p>
+                    <p>Master's thesis examining online stance-taking and indirect language attitudes among Arab social media users regarding Disney dubbing into MSA and ECA. The VGT experiment revealed that Mashreq and Peninsula respondents showed closer language attitudes to each other than to Maghreb counterparts, offering nuanced regional insight into Arabic language ideology.</p>
                     <div class="plumx-container">
                         <div class="plumx-label">📊 Article Metrics & Impact</div>
                         <div class="plumx-summary">
                             <a href="https://plu.mx/plum/a/?bepress_url_id=https%3A%2F%2Ffount.aucegypt.edu%2Fetds%2F2234" data-hide-print="true" class="plumx-details" data-site="plum" data-hide-when-empty="true">Investigating Language Ideologies and Attitudes Towards Dubbing Disney Movies into Arabic</a>
                         </div>
                     </div>
-                    <a href="https://fount.aucegypt.edu/etds/2234/" target="_blank" class="pub-link">Read Full Thesis →</a>
+                    <a href="https://fount.aucegypt.edu/etds/2234/" target="_blank" rel="noopener noreferrer" class="pub-link">Read Full Thesis →</a>
                 </article>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <p>© 2026 Nouran Tarek Soliman. All rights reserved.</p>
         <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Applied Linguistics Researcher | Academic English Specialist | Sociolinguistics Scholar</p>
     </footer>
@@ -797,6 +837,22 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Active nav state
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(a => a.classList.remove('active'));
+                    const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' });
+
+        sections.forEach(s => navObserver.observe(s));
 
         // Smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
