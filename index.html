@@ -81,7 +81,7 @@
         /* Header */
         header {
             position: relative;
-            background: linear-gradient(135deg, var(--primary) 0%, #2a3f5f 100%);
+            background: linear-gradient(135deg, #0d1520 0%, #1a2332 50%, #0f1c2e 100%);
             color: var(--bg);
             padding: 120px 20px 80px;
             text-align: center;
@@ -122,7 +122,7 @@
             border: 5px solid rgba(255,255,255,0.2);
             margin: 0 auto 30px;
             object-fit: cover;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(193,154,107,0.12);
             animation: fadeInScale 1s ease-out;
             display: block;
             background: rgba(255,255,255,0.1);
@@ -622,6 +622,68 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Hero refinements */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            z-index: 2;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(ellipse, rgba(193,154,107,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-watermark {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: clamp(1.8rem, 8vw, 4.5rem);
+            color: rgba(193, 154, 107, 0.06);
+            direction: rtl;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 4px;
+        }
+
+        .hero-institution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 16px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: rgba(193, 154, 107, 0.7);
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-institution::before,
+        .hero-institution::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: rgba(193, 154, 107, 0.4);
         }
     </style>
 </head>
