@@ -920,6 +920,70 @@
             .lang-level { text-align: left; }
         }
 
+        /* Section dividers */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 0 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .section-divider span {
+            color: var(--accent);
+            font-size: 0.7rem;
+        }
+
+        /* Progress dots */
+        .progress-dots {
+            position: fixed;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 50;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, transform 0.3s;
+            padding: 0;
+            display: block;
+        }
+
+        .progress-dot.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: scale(1.35);
+        }
+
+        .progress-dot:hover {
+            border-color: var(--secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .progress-dots { display: none; }
+        }
+
     </style>
 </head>
 <body>
@@ -950,6 +1014,16 @@
             <li><a href="#publications">Publications</a></li>
             <li><a href="#credentials">Credentials</a></li>
         </ul>
+    </nav>
+
+    <!-- Progress dots navigation -->
+    <nav class="progress-dots" aria-label="Page section progress">
+        <button class="progress-dot active" data-target="about" aria-label="About section"></button>
+        <button class="progress-dot" data-target="education" aria-label="Education section"></button>
+        <button class="progress-dot" data-target="teaching" aria-label="Teaching section"></button>
+        <button class="progress-dot" data-target="research" aria-label="Research section"></button>
+        <button class="progress-dot" data-target="publications" aria-label="Publications section"></button>
+        <button class="progress-dot" data-target="credentials" aria-label="Credentials section"></button>
     </nav>
 
     <!-- About Section -->
@@ -988,6 +1062,8 @@
 
         </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
 
     <!-- Education -->
     <section id="education" style="background: var(--bg-alt);">
@@ -1035,6 +1111,8 @@
         </div>
     </section>
 
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
+
     <!-- Teaching -->
     <section id="teaching">
         <div class="container">
@@ -1076,6 +1154,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
 
     <!-- Research Interests -->
     <section id="research" style="background: var(--bg-alt);">
@@ -1124,6 +1204,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
 
     <!-- Publications -->
     <section id="publications">
@@ -1187,6 +1269,8 @@
         </div>
     </section>
 
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
+
     <!-- Credentials & Languages -->
     <section id="credentials" style="background: var(--bg-alt);">
         <div class="container">
@@ -1245,6 +1329,8 @@
         </div>
     </section>
 
+    <div class="section-divider" aria-hidden="true"><span>✦</span></div>
+
     <!-- Footer -->
     <footer>
         <p>© 2026 Nouran Tarek Soliman. All rights reserved.</p>
@@ -1294,11 +1380,22 @@
                     navLinks.forEach(a => a.classList.remove('active'));
                     const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
                     if (active) active.classList.add('active');
+
+                    document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active'));
+                    const dot = document.querySelector(`.progress-dot[data-target="${entry.target.id}"]`);
+                    if (dot) dot.classList.add('active');
                 }
             });
         }, { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' });
 
         sections.forEach(s => navObserver.observe(s));
+
+        document.querySelectorAll('.progress-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const target = document.getElementById(dot.dataset.target);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
 
         // Smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
