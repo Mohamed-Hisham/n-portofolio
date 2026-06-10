@@ -1,0 +1,120 @@
+<h2>Hero & page-wide visual upgrades</h2>
+<p class="subtitle">The hero is currently: photo + name + title on navy. Select what to add or change. Multi-select.</p>
+
+<div class="options" data-multiselect>
+
+  <div class="option" data-choice="hero-layout" onclick="toggleSelect(this)">
+    <div class="letter">1</div>
+    <div class="content">
+      <h3>Split Hero Layout</h3>
+      <p>Instead of centered, go <strong>left-aligned two-column</strong>: photo on the left, name + title + research keywords on the right. More editorial, less "resume template." Stacks gracefully on mobile.</p>
+      <div style="margin-top:10px;background:#1a2332;border-radius:6px;padding:16px;display:flex;gap:16px;align-items:center;font-family:Georgia,serif;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.15);flex-shrink:0;border:3px solid rgba(193,154,107,0.4);"></div>
+        <div style="color:#fdfbf7;">
+          <div style="font-size:8px;letter-spacing:2px;color:#c19a6b;text-transform:uppercase;margin-bottom:4px;">English Linguistics Expert</div>
+          <div style="font-size:16px;font-weight:300;letter-spacing:1px;margin-bottom:4px;">Nouran Tarek Soliman</div>
+          <div style="font-size:9px;font-style:italic;opacity:0.75;">Ph.D. Candidate · Applied Linguistics · AAST</div>
+          <div style="margin-top:8px;font-size:9px;color:#c19a6b;border-top:1px solid rgba(193,154,107,0.3);padding-top:6px;">Language ideologies · Arabic diglossia · Media translation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hero-arabic" onclick="toggleSelect(this)">
+    <div class="letter">2</div>
+    <div class="content">
+      <h3>Arabic Calligraphy Watermark</h3>
+      <p>Her name <strong>نوران طارق سليمان</strong> ghosted at 6% opacity as a decorative background layer. Connects her identity directly to her research domain — Arabic sociolinguistics — without distracting from the content.</p>
+      <div style="margin-top:10px;background:#1a2332;border-radius:6px;padding:20px;text-align:center;position:relative;overflow:hidden;font-family:Georgia,serif;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:42px;color:rgba(255,255,255,0.06);pointer-events:none;direction:rtl;">نوران طارق سليمان</div>
+        <div style="position:relative;z-index:1;color:#fdfbf7;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 auto 10px;border:3px solid rgba(193,154,107,0.4);"></div>
+          <div style="font-size:14px;font-weight:300;">Nouran Tarek Soliman</div>
+          <div style="font-size:9px;opacity:0.7;font-style:italic;">Applied Linguistics Ph.D. Candidate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hero-cta" onclick="toggleSelect(this)">
+    <div class="letter">3</div>
+    <div class="content">
+      <h3>Hero CTA Buttons</h3>
+      <p><strong>"View Publications →"</strong> (primary) and <strong>"Download CV"</strong> (ghost outline) at the bottom of the hero. Gives visitors a clear path immediately. CV can link directly to the PDF file in the repo.</p>
+      <div style="margin-top:10px;background:#1a2332;border-radius:6px;padding:16px;text-align:center;font-family:Georgia,serif;">
+        <div style="color:#fdfbf7;font-size:13px;margin-bottom:14px;font-weight:300;">Nouran Tarek Soliman</div>
+        <div style="display:flex;gap:10px;justify-content:center;">
+          <div style="background:#8b4513;color:#fdfbf7;padding:8px 16px;border-radius:4px;font-size:10px;letter-spacing:1px;">View Publications →</div>
+          <div style="border:1px solid rgba(255,255,255,0.4);color:#fdfbf7;padding:8px 16px;border-radius:4px;font-size:10px;letter-spacing:1px;">Download CV</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="section-dividers" onclick="toggleSelect(this)">
+    <div class="letter">4</div>
+    <div class="content">
+      <h3>Ornamental Section Dividers</h3>
+      <p>Thin gold decorative rules between sections — a <strong>✦</strong> centered on a hairline gradient. Replaces hard background-color transitions. Gives the page a scholarly, book-like rhythm.</p>
+      <div style="margin-top:10px;background:#fdfbf7;border-radius:6px;padding:14px;font-family:Georgia,serif;">
+        <div style="background:#f5f1e8;padding:8px;text-align:center;font-size:9px;color:#5a6a7a;">About Section</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;">
+          <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c19a6b,transparent);"></div>
+          <div style="color:#c19a6b;font-size:10px;">✦</div>
+          <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c19a6b,transparent);"></div>
+        </div>
+        <div style="background:#fdfbf7;padding:8px;text-align:center;font-size:9px;color:#5a6a7a;">Education Section</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;">
+          <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c19a6b,transparent);"></div>
+          <div style="color:#c19a6b;font-size:10px;">✦</div>
+          <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c19a6b,transparent);"></div>
+        </div>
+        <div style="background:#f5f1e8;padding:8px;text-align:center;font-size:9px;color:#5a6a7a;">Teaching Section</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="pub-timeline" onclick="toggleSelect(this)">
+    <div class="letter">5</div>
+    <div class="content">
+      <h3>Publication Timeline Spine</h3>
+      <p>A <strong>vertical gold rule with date markers</strong> on the left of each publication card — unifying Publications visually with the Education and Teaching Swiss Grid. Makes the research output feel like a progression, not a list.</p>
+      <div style="margin-top:10px;background:#fdfbf7;border-radius:6px;padding:12px;display:grid;grid-template-columns:44px 1fr;font-family:Georgia,serif;">
+        <div style="border-right:2px solid #c19a6b;padding-right:8px;text-align:right;">
+          <div style="font-size:8px;font-weight:bold;color:#8b4513;margin-bottom:20px;">Dec<br>2024</div>
+          <div style="font-size:8px;font-weight:bold;color:#8b4513;margin-bottom:20px;">Sep<br>2024</div>
+          <div style="font-size:8px;font-weight:bold;color:#8b4513;">Jan<br>2024</div>
+        </div>
+        <div style="padding-left:12px;">
+          <div style="margin-bottom:18px;"><div style="font-size:10px;font-weight:bold;color:#1a2332;">Transitivity, verbal humour...</div><div style="font-size:8px;color:#5a6a7a;">ILCC Journal</div></div>
+          <div style="margin-bottom:18px;"><div style="font-size:10px;font-weight:bold;color:#1a2332;">Language ideologies — Disney...</div><div style="font-size:8px;color:#5a6a7a;">Edinburgh University Press</div></div>
+          <div><div style="font-size:10px;font-weight:bold;color:#1a2332;">Disney Dubbing — Master's Thesis</div><div style="font-size:8px;color:#5a6a7a;">AUC Knowledge Fountain</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="side-dots" onclick="toggleSelect(this)">
+    <div class="letter">6</div>
+    <div class="content">
+      <h3>Fixed Side Progress Dots</h3>
+      <p>A fixed vertical column of dots on the right edge — one per section, active one filled gold. Shows scroll progress at a glance. Hidden on mobile. Common in editorial portfolios.</p>
+      <div style="margin-top:10px;background:#fdfbf7;border-radius:6px;padding:14px;display:flex;justify-content:space-between;align-items:center;font-family:Georgia,serif;min-height:80px;">
+        <div style="font-size:9px;color:#5a6a7a;font-style:italic;">← currently on: Education</div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#8b4513;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#c19a6b;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #d4c5b0;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #d4c5b0;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #d4c5b0;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #d4c5b0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:24px;padding:16px;background:#f5f1e8;border-left:3px solid #c19a6b;border-radius:4px;">
+  <p style="margin:0;font-size:13px;color:#5a6a7a;"><strong style="color:#8b4513;">My picks: 2 + 3 + 4 + 5.</strong> The Arabic watermark (2) is unique and directly tied to her research identity. CTA buttons (3) make the hero actionable for first-time visitors. Ornamental dividers (4) give the page scholarly rhythm for free. Publication timeline spine (5) unifies the visual language across all sections.</p>
+</div>
