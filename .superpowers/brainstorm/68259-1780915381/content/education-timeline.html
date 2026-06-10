@@ -1,0 +1,143 @@
+<h2>Education Timeline — which visual treatment?</h2>
+<p class="subtitle">4 degrees, 3 institutions, concurrent degrees. How should this be displayed?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fdfbf7;padding:20px;font-family:Georgia,serif;position:relative;">
+      <!-- Vertical line -->
+      <div style="position:absolute;left:36px;top:20px;bottom:20px;width:2px;background:linear-gradient(180deg,#c19a6b,#8b4513);"></div>
+      <!-- Entry 1 -->
+      <div style="display:flex;gap:16px;margin-bottom:20px;position:relative;">
+        <div style="width:16px;height:16px;border-radius:50%;background:#8b4513;border:3px solid #fdfbf7;box-shadow:0 0 0 2px #8b4513;margin-top:2px;flex-shrink:0;z-index:1;"></div>
+        <div>
+          <div style="font-size:9px;color:#8b4513;letter-spacing:1px;text-transform:uppercase;">Feb 2024 – Present</div>
+          <div style="font-size:12px;font-weight:bold;color:#1a2332;">Ph.D. Applied Linguistics</div>
+          <div style="font-size:10px;color:#5a6a7a;">AAST · GPA 4.0</div>
+        </div>
+      </div>
+      <!-- Entry 2 + 3 concurrent -->
+      <div style="display:flex;gap:16px;margin-bottom:20px;position:relative;">
+        <div style="width:16px;height:16px;border-radius:50%;background:#c19a6b;border:3px solid #fdfbf7;box-shadow:0 0 0 2px #c19a6b;margin-top:2px;flex-shrink:0;z-index:1;"></div>
+        <div style="flex:1;">
+          <div style="font-size:9px;color:#8b4513;letter-spacing:1px;text-transform:uppercase;">Sep 2020 – Jan 2024 · Concurrent</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <div style="flex:1;background:#f5f1e8;padding:6px 8px;border-left:2px solid #8b4513;">
+              <div style="font-size:11px;font-weight:bold;color:#1a2332;">MA TESOL</div>
+              <div style="font-size:9px;color:#5a6a7a;">AUC · GPA 3.8</div>
+            </div>
+            <div style="flex:1;background:#f5f1e8;padding:6px 8px;border-left:2px solid #c19a6b;">
+              <div style="font-size:11px;font-weight:bold;color:#1a2332;">TAFL Diploma</div>
+              <div style="font-size:9px;color:#5a6a7a;">AAST · GPA 3.9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Entry 4 -->
+      <div style="display:flex;gap:16px;position:relative;">
+        <div style="width:16px;height:16px;border-radius:50%;background:#d4c5b0;border:3px solid #fdfbf7;box-shadow:0 0 0 2px #d4c5b0;margin-top:2px;flex-shrink:0;z-index:1;"></div>
+        <div>
+          <div style="font-size:9px;color:#8b4513;letter-spacing:1px;text-transform:uppercase;">Sep 2015 – Jun 2019</div>
+          <div style="font-size:12px;font-weight:bold;color:#1a2332;">BA Language & Translation</div>
+          <div style="font-size:10px;color:#5a6a7a;">AAST · GPA 3.78</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Vertical Timeline</h3>
+      <p>Classic academic CV style. Vertical line with dots. Concurrent degrees shown side-by-side with a "Concurrent" label. Clean, scannable, familiar to hiring committees.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fdfbf7;padding:20px;font-family:Georgia,serif;">
+      <!-- PhD -->
+      <div style="background:#1a2332;color:#fdfbf7;padding:14px 16px;border-radius:4px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:9px;letter-spacing:2px;opacity:0.7;text-transform:uppercase;">2024 – Present</div>
+          <div style="font-size:13px;font-weight:bold;">Ph.D. Applied Linguistics</div>
+          <div style="font-size:10px;opacity:0.8;">Arab Academy for Science, Technology & Maritime Transport</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:18px;font-weight:bold;color:#c19a6b;">4.0</div>
+          <div style="font-size:8px;opacity:0.7;letter-spacing:1px;">GPA</div>
+        </div>
+      </div>
+      <!-- Concurrent -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+        <div style="background:#8b4513;color:#fdfbf7;padding:12px;border-radius:4px;">
+          <div style="font-size:8px;letter-spacing:1px;opacity:0.8;text-transform:uppercase;">2020–2024</div>
+          <div style="font-size:11px;font-weight:bold;">MA TESOL</div>
+          <div style="font-size:9px;opacity:0.8;">AUC</div>
+          <div style="font-size:16px;font-weight:bold;color:#c19a6b;margin-top:4px;">3.8</div>
+        </div>
+        <div style="background:#6b3410;color:#fdfbf7;padding:12px;border-radius:4px;">
+          <div style="font-size:8px;letter-spacing:1px;opacity:0.8;text-transform:uppercase;">2020–2024 · Concurrent</div>
+          <div style="font-size:11px;font-weight:bold;">TAFL Diploma</div>
+          <div style="font-size:9px;opacity:0.8;">AAST</div>
+          <div style="font-size:16px;font-weight:bold;color:#c19a6b;margin-top:4px;">3.9</div>
+        </div>
+      </div>
+      <!-- BA -->
+      <div style="background:#f5f1e8;border:1px solid #d4c5b0;padding:12px 16px;border-radius:4px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:9px;color:#8b4513;letter-spacing:1px;text-transform:uppercase;">2015–2019</div>
+          <div style="font-size:12px;font-weight:bold;color:#1a2332;">BA Language & Translation</div>
+          <div style="font-size:10px;color:#5a6a7a;">AAST · Thesis: Audio Visual Translation</div>
+        </div>
+        <div style="font-size:18px;font-weight:bold;color:#8b4513;">3.78</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Stacked Cards with GPA Prominence</h3>
+      <p>Each degree is a card. GPA displayed large. PhD in navy (primary), concurrent MAs in brown tones, BA in parchment. Modern but stays within the existing color palette.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fdfbf7;padding:20px;font-family:Georgia,serif;">
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:0;">
+        <!-- Year column -->
+        <div style="border-right:2px solid #c19a6b;padding-right:12px;text-align:right;">
+          <div style="margin-bottom:28px;">
+            <div style="font-size:10px;font-weight:bold;color:#8b4513;">2024</div>
+            <div style="font-size:8px;color:#5a6a7a;">Present</div>
+          </div>
+          <div style="margin-bottom:28px;">
+            <div style="font-size:10px;font-weight:bold;color:#8b4513;">2020</div>
+            <div style="font-size:8px;color:#5a6a7a;">2024</div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:bold;color:#8b4513;">2015</div>
+            <div style="font-size:8px;color:#5a6a7a;">2019</div>
+          </div>
+        </div>
+        <!-- Content column -->
+        <div style="padding-left:16px;">
+          <div style="margin-bottom:20px;">
+            <div style="font-size:12px;font-weight:bold;color:#1a2332;">Ph.D. Applied Linguistics</div>
+            <div style="font-size:10px;color:#5a6a7a;">AAST · GPA 4.0</div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:inline-block;background:#f5f1e8;border:1px solid #d4c5b0;font-size:8px;padding:2px 6px;color:#8b4513;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Concurrent</div>
+            <div style="font-size:11px;font-weight:bold;color:#1a2332;">MA TESOL · AUC · GPA 3.8</div>
+            <div style="font-size:11px;font-weight:bold;color:#1a2332;">TAFL Diploma · AAST · GPA 3.9</div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:bold;color:#1a2332;">BA Language & Translation</div>
+            <div style="font-size:10px;color:#5a6a7a;">AAST · GPA 3.78</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Two-Column Swiss Grid</h3>
+      <p>Years on the left, details on the right, separated by a gold vertical rule. Quiet and editorial — lets the content breathe. Works best for readers who scan vertically.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:24px;padding:16px;background:#f5f1e8;border-left:3px solid #c19a6b;border-radius:4px;">
+  <p style="margin:0;font-size:13px;color:#5a6a7a;"><strong style="color:#8b4513;">My recommendation: A — Vertical Timeline.</strong> It's the format academic hiring committees instantly recognise from CVs. The concurrent degree callout makes the 2020–2024 double-degree achievement immediately visible without explanation.</p>
+</div>
